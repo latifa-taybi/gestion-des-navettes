@@ -26,7 +26,6 @@ class AuthController extends Controller
 
     public function store(StoreAuthRequest $request)
     {
-        
         $user=User::create([
             'name'=>$request->name,
             'email'=>$request->email,

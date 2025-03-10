@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAuthRequest extends FormRequest
+class UpdateTagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,11 +22,7 @@ class StoreAuthRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|string|',
-            'email'=>'required|string|email',
-            'password'=>'required|string|min:8',
-            'role'=>'required|in:1,2'
+            'name' => 'required|string|max:255',
         ];
-        
     }
 }
